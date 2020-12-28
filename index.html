@@ -1,0 +1,356 @@
+<html>
+   
+<!--To anyone reading this, I hope you find my comments useful. I commented out almost everything, as that's how I gain understanding - when I can explain
+    it to myself. Hope it helps someone else as well. I have also included the style at the bottom of this file. I'm using lots of line breaks for code legibility.
+
+    The bulk of work in this project seems to be in getting proper CSS styling.-->
+
+<body> <!-- Body tag contains all of the contents of this HTML file - it defines the body of the document. -->
+
+<nav class = "navigation-bar-container">
+
+    <!--Starting from the top, I'm adding elements as I see them on google.com. The main 5 elements are navigation bar at the top, Google
+        logo, search box, submit buttons, and footer. 
+        
+        Here I am structuring the container for the top navigation bar with items added as a list. I can order them later on horizontally with CSS 
+        (using the "top-navigation-bar" CSS class).-->
+                    
+        <ul class = "top-navigation-bar">
+
+            <!--This style class is responsible for styling the three items on this list-->
+
+            <li><a href = "">Gmail</a></li>
+
+            <li><a href = "">Images</a></li>
+
+            <li class = "account-sign-in-button"><a href = "">Sign in</a></li>
+        
+            <!--Sign in requires a separate style as it is not just a link, but a button. CSS rules can be taken from the inspector.-->
+
+
+        </ul></nav>
+
+    <!--This concludes the navigation bar.-->
+
+    <div class = "main-site-content">
+
+        <!--This div with "main-site-content" class includes the logo, the search bar, and the search buttons.-->
+
+        <div class = "google-logo"><img src = "https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.3-law.gif" id = "logo-live">
+    
+        <!--This is the sub-div that is taking the current Christmas doodle from google.com. Logo work in HTML is done, just need to style the class.-->
+
+        <form class = "search-box-input">
+
+        <!--This is the sub-div that defines the Google search box-->
+
+            <div class = "form-input">
+            
+                <div class = "input-field">
+            
+                <input type = "search" id="search-field" name = "search-field" title="Search"></div>
+            
+                </div>
+
+            </div>
+
+            <div class = "submition-buttons">
+               
+                <button type = "submit" class="main-submition-buttons">Google Search</button>
+               
+                <button type = "submit" class="main-submition-buttons">I'm Feeling Lucky</button>
+           
+            </div>
+
+        </form>
+
+    </div>
+    
+    <footer>
+
+    <!--This tag defines the footer section which includes 1 link in the upper row, and 6 links in the lower row.-->
+
+
+        <div class = "country main-footer"> <a class = "footer-link" href = "">Germany</a></div>
+        
+        <div class = "footer-info foot">
+    
+            <span class = "footer-left footer-span">
+
+                    <a class = "footer-link footer-min" href = "">Advertising</a>
+
+                    <a class = "footer-link" href = "">Business</a>
+
+                    <a class = "footer-link footer-third" href = "">How Search works</a>
+
+            </span>
+    
+            <span class = "footer-right footer-span">
+
+                    <a class = "footer-link" href = "">Privacy</a>
+
+                    <a class = "footer-link" href = "">Terms</a>
+
+                    <a class = "footer-link" href = "">Settings</a>
+
+            </span>
+    
+        </div>
+    
+    </footer>
+
+</body>
+
+</html>
+<!-- Sign in requires a separate style as it is not just a link, but a button. CSS rules can be taken from the inspector -->
+
+<style>
+
+/*Took most CSS rules directly off Google through site inspection*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: arial, sans-serif;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 360px;
+}
+
+.top-navigation-bar {
+    line-height: 24px;
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-bar-container {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.navigation-bar-container > ul > li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.account-sign-in-button {
+    color: white;
+    font-weight: bold;
+    padding: 3px 15px;
+    background-color: #4285f4;
+    border-radius: 3px;
+}
+
+.account-sign-in-button > a:hover {
+    text-decoration: none;
+}
+
+.account-sign-in-button:hover {
+    background-color: #5c96f5;
+}
+
+.main-site-content {
+    flex: 1 0 auto;
+    width: 100vw;
+    min-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.google-logo {
+    margin-top: 135px;
+    transition-duration: 0.5s;
+    transition-property: margin-top;
+}
+
+#logo-live {
+    width: 100%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-box-input {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+}
+
+.form-input {
+    display: flex;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    flex: 0 1 612px;
+    height: 44px;
+    margin: 25px auto 25px;
+}
+
+#search-field {
+    margin: auto 30px;
+    font-size: 15px;
+    flex: 0 1 612px;
+    height: 44px;
+    border: 1.5px solid #e4e4e4;
+    border-radius: 50px;
+    padding-left: 25px;
+}
+
+#search-field:hover, #search-field:focus {
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    outline: none;
+}
+
+.submition-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-submition-buttons {
+    margin: auto 5px;
+    font-size: 14px;
+    color: #5f6368;
+    background-color: #f2f2f2;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 10px 14px;
+}
+
+.main-submition-buttons:hover {
+    border: 1px solid #c5c5c5;
+    cursor: pointer;
+    color: black;
+}
+
+.main-submition-buttons:active, .main-submition-buttons:focus {
+    border: 1px solid #4d90fe;
+    outline: none;
+}
+
+.search-text {
+    margin-top: 28px;
+    text-align: center;
+    font-size: small;
+}
+
+.search-text > a {
+    color: #1a0dab;
+}
+
+footer {
+    flex: 0 0 auto;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    min-width: 350px;
+    color: rgba(95, 99, 104);
+    background-color: #f2f2f2;
+}
+
+.main-footer {
+    position: relative;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.footer-link {
+    padding-left: 27px;
+    line-height: 40px;
+}
+
+.footer-span {
+    margin-left: 3px;
+    padding-right: 30px;
+}
+
+.footer-right {
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+}
+
+.footer-info {
+    font-size: 14px;
+}
+
+.country {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+@media (max-width: 850px) {
+    .footer {
+        font-size: 14px;
+    }
+    .footer-span {
+        display: block;
+        text-align: center;
+        padding-right: 0px;
+        margin: auto;
+    }
+    .footer-right {
+        position: static;
+    }
+    .footer-min {
+        padding-left: 0px;
+    }
+}
+@media (max-height: 770px){
+    .google-logo {
+        margin-top: -5px;
+    }
+}
+@media (max-height: 535px) {
+    #logo-live {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 210px;
+    }
+    .google-logo {
+        margin-top: -5px !important;
+    }
+    .input-field {
+        margin-top: 15px;
+    }
+
+}
+@media (max-width: 485px) {
+    .footer-third {
+        display: block;
+        text-align: center;
+        padding-left: 0px;
+    }
+    .footer-min {
+        padding-left: 27px;
+    }
+}
+</style>
